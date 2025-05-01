@@ -1,3 +1,4 @@
+using System;
 using System.Runtime.CompilerServices;
 using System.Security.Cryptography;
 using TMPro;
@@ -5,6 +6,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public event Action OnPlayerJumped;
+
     [Header("References")]
     [SerializeField] private Transform _orientationTransform;
 
@@ -151,6 +154,9 @@ if (newState != currentState) //eger yeni durum eski durumdan farklıysa hareket
           }
 
     private void SetPlayerJumping(){
+
+        OnPlayerJumped?.Invoke();
+    
         //zıplamadan önce y ekseninde hız sınıfrlanır 
         _playerRigidbody.linearVelocity= new Vector3(_playerRigidbody.linearVelocity.x,0f,_playerRigidbody.linearVelocity.z);
         _playerRigidbody.AddForce(transform.up * _jumpForce,ForceMode.Impulse);
@@ -172,4 +178,8 @@ private bool IsSliding(){
     return _isSliding;
 }
 
+    internal static void _OnPlayerJumped()
+    {
+        throw new NotImplementedException();
+    }
 }
