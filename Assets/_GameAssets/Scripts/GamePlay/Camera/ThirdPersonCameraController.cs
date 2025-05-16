@@ -21,6 +21,16 @@ public class ThirdPersonCameraController : MonoBehaviour
 //Input direction = hareket etme etmeme
     private void Update()
     {
+             
+             if (GameManager.Instance.GetCurrentGameState() != GameState.Play
+               && GameManager.Instance.GetCurrentGameState() != GameState.Resume)
+                   {
+                     return;
+                    }
+        //Eğer oyun şu an ne oynanıyor (Play) 
+        //ne de devam ediyor (Resume) durumundaysa, bu fonksiyonu hemen bitir, gerisini yapma.
+
+
         //kameraya gore yon belirleme
         Vector3 viewDirection =
         _playerTransform.position- new Vector3(transform.position.x,_playerTransform.position.y,transform.position.z);
