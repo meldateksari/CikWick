@@ -120,6 +120,7 @@ GameObject:
   - component: {fileID: 8466652513992570839}
   - component: {fileID: 6017265248162587577}
   - component: {fileID: 5567082345102571221}
+  - component: {fileID: 1162065714255542178}
   m_Layer: 0
   m_Name: HolyWheat
   m_TagString: HolyWheat
@@ -178,3 +179,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _wheatDesignSO: {fileID: 11400000, guid: cbc99e457dcb26a4eb95d3f2bb210372, type: 2}
   _playerController: {fileID: 0}
+  _playerStateUI: {fileID: 0}
+--- !u!208 &1162065714255542178
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8978016874119027116}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
