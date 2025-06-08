@@ -2346,8 +2346,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61cf1e31e03b316468c50f2c179ea56f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _catController: {fileID: 1215238916}
   _eggCounterUI: {fileID: 1468184073}
   _winLoseUI: {fileID: 240291297}
+  _playerHealtUI: {fileID: 1773604789}
   _maxEggCount: 5
   _delay: 0.5
 --- !u!4 &499058044
@@ -5358,6 +5360,7 @@ GameObject:
   - component: {fileID: 1215238913}
   - component: {fileID: 1215238914}
   - component: {fileID: 1215238915}
+  - component: {fileID: 1215238918}
   - component: {fileID: 1215238917}
   - component: {fileID: 1215238916}
   m_Layer: 0
@@ -5375,14 +5378,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1215238911}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -6.1108713, y: -6.684791, z: 38.77959}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3746651654966603265}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1215238913
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5398,7 +5401,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -5472,8 +5475,8 @@ MonoBehaviour:
   _patrolRadius: 28
   _waitTime: 6.75
   _maxDestinationAttempts: 50
-  _chaseDistanceThreshold: 2.25
-  _chaseDistance: 2.75
+  _chaseDistanceThreshold: 1.5
+  _chaseDistance: 2
 --- !u!114 &1215238917
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5487,6 +5490,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _currentCatState: 1
+--- !u!114 &1215238918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1215238911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70e37d9ffe70b0748a0b574b4db4a6db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _catAnimator: {fileID: 4086198044391486652}
 --- !u!1 &1240453235
 GameObject:
   m_ObjectHideFlags: 0
@@ -10213,7 +10229,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4086198044391486651}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0.26, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -10221,7 +10237,7 @@ Transform:
   - {fileID: 6712803421417306796}
   - {fileID: 2449231308225743722}
   m_Father: {fileID: 1215238912}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &3770390706615945086
 GameObject:
   m_ObjectHideFlags: 0
@@ -10358,6 +10374,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3746651654966603265}
+  - component: {fileID: 4086198044391486652}
   m_Layer: 0
   m_Name: CatVisual
   m_TagString: Untagged
@@ -10365,6 +10382,28 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!95 &4086198044391486652
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4086198044391486651}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c23472b818daf31409ebbd817a09e04e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!4 &4218309296666222732
 Transform:
   m_ObjectHideFlags: 0
